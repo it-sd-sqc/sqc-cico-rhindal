@@ -96,6 +96,7 @@ public class Main {
       catch (SQLException e) {
         System.err.println(e.getMessage());
       }
+
     }
   }
 
@@ -209,7 +210,7 @@ public class Main {
   }
 
   // Display name and new status //////////////////////////////////////////////
-  // Module 3 tickets: Display user name and new status. Doesn't require a
+  // Module 3 tickets: Display username and new status. Doesn't require a
   // method and can be done where this is called instead.
   private static void updateStateLabels(String name, boolean isCheckedInNow) {
     labelUser.setText(name);
@@ -230,6 +231,7 @@ public class Main {
     frame.setMinimumSize(new Dimension(320, 240));
     frame.setPreferredSize(new Dimension(640, 480));
     frame.setMaximumSize(new Dimension(640, 480));
+    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); /// --- allows an exit on close in Mac-OS and Windows
 
     // Collect each "card" panel in a deck.
     deck = new JPanel(new CardLayout());

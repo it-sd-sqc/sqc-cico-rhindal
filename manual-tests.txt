@@ -61,8 +61,16 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
-# Module 6
+# Module 4: System exit on close 
+## Test steps
+1. Build and run CiCo.
+2. Click on the close window button.
 
+## Expected results
+* Should close the window and quit the program. 
+If run from bash, should display "clean shutdown" in the terminal.
+
+# Module 6
 ## Test Steps
 1. Build and Run CiCo
 2. Enter 0's until page changes (should be 8 0's)

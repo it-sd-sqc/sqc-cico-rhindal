@@ -61,7 +61,6 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
-
 # Module 4: System exit on close 
 ## Test steps
 1. Build and run CiCo.
@@ -70,3 +69,12 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should close the window and quit the program. 
 If run from bash, should display "clean shutdown" in the terminal.
+
+# Module 6
+## Test Steps
+1. Build and Run CiCo
+2. Enter 0's until page changes (should be 8 0's)
+
+## Expected results
+* After typing 00000000, user should be directed automatically
+* to new page where username is shown

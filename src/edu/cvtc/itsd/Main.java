@@ -43,10 +43,16 @@ public class Main {
     {
       if (fb.getDocument() != null) {
         super.insertString(fb, offset, stringToAdd, attr);
+
+        if((fb.getDocument().getLength()) == MAX_LENGTH) {
+          SwingUtilities.invokeLater(Main::processCard);
+          //Makes program run right at 8 characters/digits
+        }
       }
-      else {
-        Toolkit.getDefaultToolkit().beep();
-      }
+      //Delete as was beeping even when typing in correct area
+      //else {
+        //Toolkit.getDefaultToolkit().beep();
+      //}
     }
 
     @Override
@@ -55,7 +61,12 @@ public class Main {
     {
       if (fb.getDocument() != null) {
         super.replace(fb, offset, lengthToDelete, stringToAdd, attr);
+
+        if(fb.getDocument().getLength() == MAX_LENGTH) {
+          SwingUtilities.invokeLater(Main::processCard);
+        }
       }
+
       else {
         Toolkit.getDefaultToolkit().beep();
       }
@@ -262,11 +273,12 @@ public class Main {
     fieldNumber.setForeground(Color.magenta);
     panelMain.add(fieldNumber);
 
-    JButton updateButton = new JButton("Update");
-    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    updateButton.addActionListener(new Update());
-    updateButton.setForeground(Color.green);
-    panelMain.add(updateButton);
+    //Delete button in place of automatic entry
+//    JButton updateButton = new JButton("Update");
+//    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+//    updateButton.addActionListener(new Update());
+//    updateButton.setForeground(Color.green);
+//    panelMain.add(updateButton);
 
     panelMain.add(Box.createVerticalGlue());
 
